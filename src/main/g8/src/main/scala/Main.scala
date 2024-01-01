@@ -1,0 +1,30 @@
+import scala.io.Source
+
+
+@main def hello: Unit =
+  println("Launching $name;format="Camel"$")
+  List[() => (String, String)]( () => Solver.solveTest, () => Solver.solve).foreach: f =>
+    val (score1, score2) = f.apply()
+    println(s"1 : \${score1}")
+    println(s"2 : \${score2}")
+    println(s"----------------")
+  println("Done")
+
+object Solver:
+  def runOn(inputLines: Seq[String]): (String, String) =
+    val result1 = s""
+    val result2 = s""
+
+    (s"\${result1}", s"\${result2}")
+
+  def solveTest: (String, String) =
+    solver("test.txt")
+  def solve: (String, String) =
+    solver("data.txt")
+  private def solver(fileName: String): (String, String) =
+    val bufferedSource = Source.fromResource(fileName)
+    val lines = bufferedSource.getLines().toSeq
+    lines match
+      case Nil => ("", "")
+      case _ => runOn(lines)
+end Solver
