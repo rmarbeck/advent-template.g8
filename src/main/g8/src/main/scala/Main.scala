@@ -1,7 +1,13 @@
 import scala.io.Source
+import com.typesafe.scalalogging.Logger
 
+val loggerAOC = Logger("aoc")
+val loggerAOCPart1 = Logger("aoc.part1")
+val loggerAOCPart2 = Logger("aoc.part2")
 
 @main def hello: Unit =
+  loggerAOC.trace("Root trace activated")
+  loggerAOC.debug("Root debug activated")
   println("Launching $name;format="Camel"$")
   List[() => (String, String)]( () => Solver.solveTest, () => Solver.solve).foreach: f =>
     val (score1, score2) = f.apply()
