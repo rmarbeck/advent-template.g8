@@ -18,8 +18,8 @@ val loggerAOCPart2 = Logger("aoc.part2")
 
 object Solver:
   def runOn(inputLines: Seq[String]): (String, String) =
-    val result1 = s""
-    val result2 = s""
+
+    val (result1, result2) = Solution.run(inputLines)
 
     (s"\${result1}", s"\${result2}")
 
