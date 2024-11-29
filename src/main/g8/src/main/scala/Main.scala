@@ -11,8 +11,8 @@ val loggerAOCPart2: Logger = Logger("aoc.part2")
   println("Launching Day1")
   List[() => (String, String)]( () => Solver.solveTest, () => Solver.solve).foreach: f =>
     val (score1, score2) = f.apply()
-    println(s"1 : $score1")
-    println(s"2 : $score2")
+    println(s"1 : \$score1")
+    println(s"2 : \$score2")
     println(s"----------------")
   println("Done")
 
@@ -21,7 +21,7 @@ object Solver:
 
     val (result1, result2) = Solution.run(inputLines)
 
-    (s"$result1", s"$result2")
+    (s"\$result1", s"\$result2")
 
   def solveTest: (String, String) =
     solver("test.txt")
